@@ -53,7 +53,7 @@ export default function GalleryClient({ imageUrls }: { imageUrls: string[] }) {
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   return (
-    <div style={{ width: "100vw", height: "100dvh", backgroundColor: "#f8fafc" }}>
+    <div style={{ width: "100vw", height: "100dvh", backgroundColor: "#000000" }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -64,10 +64,14 @@ export default function GalleryClient({ imageUrls }: { imageUrls: string[] }) {
         fitViewOptions={{ padding: 0.2 }}
         minZoom={0.1}
         maxZoom={3}
+        proOptions={{ hideAttribution: true }}
       >
-        <Background color="#cbd5e1" gap={20} size={2} />
+        <Background color="#222222" gap={20} size={2} />
         <Controls showInteractive={false} />
         <ResetViewButton />
+        <Panel position="bottom-right" className="text-white/40 text-xs mb-1 mr-2 tracking-widest font-medium pointer-events-none">
+          Bala
+        </Panel>
       </ReactFlow>
     </div>
   );

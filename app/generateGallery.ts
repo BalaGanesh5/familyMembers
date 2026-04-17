@@ -37,7 +37,12 @@ export const generateGallery = (imageUrls: string[]): { nodes: Node[]; edges: Ed
       source: "center",
       target: `img-${index}`,
       animated: true,
-      style: { stroke: "#6366f1", strokeWidth: 1, opacity: 0.4 }, // Indigo colored web
+      style: { 
+        stroke: "#00ffff", 
+        strokeWidth: 1, 
+        opacity: 0.3,
+        filter: "drop-shadow(0 0 3px #00ffff)"
+      }, // Neon cyan colored web
     });
   }
   return { nodes, edges };
