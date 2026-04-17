@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export const CenterNode = ({ data }: { data: any }) => {
   return (
-    <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 text-center w-[320px] overflow-hidden">
+    <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 text-center w-[280px] sm:w-[320px] overflow-hidden">
       <motion.div 
         initial={{ scale: 0.8, opacity: 0 }} 
         animate={{ scale: 1, opacity: 1 }} 

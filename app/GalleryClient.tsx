@@ -61,7 +61,8 @@ export default function GalleryClient({ imageUrls }: { imageUrls: string[] }) {
         fitView
         fitViewOptions={{ padding: 0.2 }}
         minZoom={0.1}
-        maxZoom={3}
+        maxZoom={1.5}
+        zoomOnDoubleClick={false}
         proOptions={{ hideAttribution: true }}
       >
         <Background color="#222222" gap={20} size={2} />
