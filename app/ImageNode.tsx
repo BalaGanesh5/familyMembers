@@ -35,8 +35,12 @@ export const ImageNode = ({ data }: { data: any }) => {
       <img
         src={data.url}
         alt="Gallery"
-        className="object-cover w-full transition-all duration-500"
+        className="object-cover w-full transition-all duration-500 hover:opacity-90"
         style={{ height: showDetails ? "110px" : "60px" }}
+        onClick={(e) => {
+          e.stopPropagation(); // Prevents ReactFlow from selecting/dragging the node when clicking
+          setIsOpen(true);
+        }}
       />
 
       {/* Smoothly reveal details when zoomed in */}
@@ -48,18 +52,7 @@ export const ImageNode = ({ data }: { data: any }) => {
             exit={{ opacity: 0, height: 0 }}
             className="p-4 bg-white"
           >
-            <p className="text-sm text-slate-600 font-medium mb-3">Memory #{data.id}</p>
-            <div className="flex gap-2">
-              <button 
-                onClick={(e) => {
-                  e.stopPropagation(); // Prevents ReactFlow from dragging the node when clicking
-                  setIsOpen(true);
-                }}
-                className="flex-1 bg-slate-50 hover:bg-slate-100 text-slate-600 py-1.5 rounded-lg text-sm font-medium transition-colors"
-              >
-                Full View
-              </button>
-            </div>
+            <p className="text-sm text-slate-600 font-medium m-0 text-center">Memory #{data.id}</p>
           </motion.div>
         )}
       </AnimatePresence>
