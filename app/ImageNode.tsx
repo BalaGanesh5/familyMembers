@@ -24,7 +24,7 @@ export const ImageNode = ({ data }: { data: any }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: (data.id % 10) * 0.05 }} // Deterministic stagger effect on load to avoid hydration mismatch
       style={{
-        width: showDetails ? "240px" : "60px",
+        width: showDetails ? "160px" : "60px",
         height: showDetails ? "auto" : "60px",
         transition: "width 0.4s ease, height 0.4s ease"
       }}
@@ -36,7 +36,7 @@ export const ImageNode = ({ data }: { data: any }) => {
         src={data.url}
         alt="Gallery"
         className="object-cover w-full transition-all duration-500"
-        style={{ height: showDetails ? "160px" : "60px" }}
+        style={{ height: showDetails ? "110px" : "60px" }}
       />
 
       {/* Smoothly reveal details when zoomed in */}
@@ -57,7 +57,7 @@ export const ImageNode = ({ data }: { data: any }) => {
                 }}
                 className="flex-1 bg-slate-50 hover:bg-slate-100 text-slate-600 py-1.5 rounded-lg text-sm font-medium transition-colors"
               >
-                View Full Image
+                Full View
               </button>
             </div>
           </motion.div>

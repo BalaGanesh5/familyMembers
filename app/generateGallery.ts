@@ -37,11 +37,13 @@ export const generateGallery = (imageUrls: string[]): { nodes: Node[]; edges: Ed
       source: "center",
       target: `img-${index}`,
       animated: true,
+      interactionWidth: 0, // Removes the invisible click boundary
       style: { 
         stroke: "#00ffff", 
         strokeWidth: 1, 
         opacity: 0.3,
-        filter: "drop-shadow(0 0 3px #00ffff)"
+        filter: "drop-shadow(0 0 3px #00ffff)",
+        pointerEvents: "none" // Makes the visual line ignore touch events
       }, // Neon cyan colored web
     });
   }

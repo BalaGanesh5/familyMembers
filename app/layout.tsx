@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Family Members",
-  description: "",
+  description: "Infinite gallery of family members",
 };
 
 export default function RootLayout({
